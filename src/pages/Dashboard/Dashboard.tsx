@@ -1,5 +1,5 @@
 import ChartInteractive from "@/components/ChartInteractive";
-import SectionCards from "@/components/sectionCards";
+import SectionCards from "@/components/SectionCards";
 
 const Dashboard = () => {
   return (

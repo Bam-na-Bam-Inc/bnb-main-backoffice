@@ -1,7 +1,7 @@
 import NavSecondary from "@/components/NavBelow";
 import NavMain from "@/components/NavMain";
 import NavDocuments from "@/components/NavMiddle";
-import NavSideHeader from "@/components/navSideHeader";
+import NavSideHeader from "@/components/NavSideHeader";
 import {
   Sidebar,
   SidebarContent,
