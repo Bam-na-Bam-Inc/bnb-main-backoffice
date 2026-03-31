@@ -44,27 +44,27 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard-page",
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
-      url: "#",
+      title: "Barangay Management",
+      url: "/barangay-page",
       icon: IconListDetails,
     },
     {
-      title: "Analytics",
-      url: "#",
+      title: "Rental Management",
+      url: "/rental-page",
       icon: IconChartBar,
     },
     {
-      title: "Projects",
-      url: "#",
+      title: "Business Management",
+      url: "/business-page",
       icon: IconFolder,
     },
     {
-      title: "Team",
-      url: "#",
+      title: "Feedback",
+      url: "feedback-page",
       icon: IconUsers,
     },
   ],
@@ -119,19 +119,14 @@ const data = {
 
   documents: [
     {
-      name: "Data Library",
-      url: "#",
+      name: "Role Management",
+      url: "/role-page",
       icon: IconDatabase,
     },
     {
-      name: "Reports",
-      url: "#",
+      name: "User Management",
+      url: "/user-page",
       icon: IconReport,
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: IconFileWord,
     },
   ],
 

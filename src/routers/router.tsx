@@ -1,41 +1,71 @@
-import DashboardLayout from "@/layouts/DashboardLayout";
-import LandingPageLayout from "@/layouts/LandingPageLayout";
-import Dashboard from "@/pages/Dashboard/Dashboard";
-import LoginPage from "@/pages/LandingPages/LoginPage";
-import RegistrationPage from "@/pages/LandingPages/RegistrationPage";
-import NoAccess from "@/pages/NoAccess";
+import { lazy } from "react";
 import type { RouteObject } from "react-router";
+
+/* No Access Page */
+const NoAccessPage = lazy(() => import("@/pages/NoAccess"));
+
+/* Layout Pages */
+const DashboardLayoutPage = lazy(() => import("@/layouts/DashboardLayout"));
+const LandingPageLayoutPage = lazy(() => import("@/layouts/LandingPageLayout"));
+
+/* Landing Pages */
+const LoginPage = lazy(() => import("@/pages/LandingPages/LoginPage"));
+
+/* Main Dashboard Pages */
+const DashboardPage = lazy(() => import("@/pages/DashboardPages/Dashboard"));
+const BarangayPage = lazy(() => import("@/pages/DashboardPages/BarangayPage"));
+const RentalPage = lazy(() => import("@/pages/DashboardPages/RentalPage"));
+const BusinessPage = lazy(() => import("@/pages/DashboardPages/BusinessPage"));
+const FeedBackPage = lazy(() => import("@/pages/DashboardPages/FeedBackPage"));
+const RolePage = lazy(() => import("@/pages/DashboardPages/RolePage"));
+const UserPage = lazy(() => import("@/pages/DashboardPages/UserPage"));
 
 export const routers: RouteObject[] = [
   {
     path: "*",
-    element: <NoAccess />,
+    element: <NoAccessPage />,
   },
 
   {
-    element: <LandingPageLayout />,
+    element: <LandingPageLayoutPage />,
     children: [
       {
         path: "/",
         element: <LoginPage />,
       },
-      {
-        path: "/registration-page",
-        element: <RegistrationPage />,
-      },
     ],
   },
 
   {
-    element: <DashboardLayout />,
+    element: <DashboardLayoutPage />,
     children: [
       {
         path: "/dashboard-page",
-        element: <Dashboard />,
+        element: <DashboardPage />,
       },
       {
-        path: "/registration-page",
-        element: <RegistrationPage />,
+        path: "/barangay-page",
+        element: <BarangayPage />,
+      },
+      {
+        path: "/rental-page",
+        element: <RentalPage />,
+      },
+      {
+        path: "/business-page",
+        element: <BusinessPage />,
+      },
+      {
+        path: "/feedback-page",
+        element: <FeedBackPage />,
+      },
+      {
+        path: "/role-page",
+        element: <RolePage />,
+      },
+      {
+        path: "/user-page",
+        element: <UserPage />,
       },
     ],
   },
