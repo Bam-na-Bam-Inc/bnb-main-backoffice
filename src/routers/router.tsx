@@ -10,6 +10,7 @@ const LandingPageLayoutPage = lazy(() => import("@/layouts/LandingPageLayout"));
 
 /* Landing Pages */
 const LoginPage = lazy(() => import("@/pages/LandingPages/LoginPage"));
+const LandingPage = lazy(() => import("@/pages/LandingPages/LandingPage"));
 
 /* Main Dashboard Pages */
 const DashboardPage = lazy(() => import("@/pages/DashboardPages/Dashboard"));
@@ -31,6 +32,10 @@ export const routers: RouteObject[] = [
     children: [
       {
         path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/login-page",
         element: <LoginPage />,
       },
     ],

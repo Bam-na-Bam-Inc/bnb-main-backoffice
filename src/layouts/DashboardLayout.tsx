@@ -1,12 +1,10 @@
 import NavSecondary from "@/components/NavBelow";
 import NavMain from "@/components/NavMain";
-import NavDocuments from "@/components/NavMiddle";
+import NavUserManagement from "@/components/NavUserManagement";
 import NavSideHeader from "@/components/NavSideHeader";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
   SidebarHeader,
   SidebarInset,
   SidebarProvider,
@@ -22,25 +20,18 @@ import {
   IconDatabase,
   IconFileAi,
   IconFileDescription,
-  IconFileWord,
   IconFolder,
   IconHelp,
   IconInnerShadowTop,
   IconListDetails,
   IconLogout,
   IconReport,
-  IconSearch,
   IconSettings,
   IconUsers,
 } from "@tabler/icons-react";
 import { Outlet } from "react-router";
 
 const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
       title: "Dashboard",
@@ -64,67 +55,19 @@ const data = {
     },
     {
       title: "Feedback",
-      url: "feedback-page",
+      url: "/feedback-page",
       icon: IconUsers,
-    },
-  ],
-  navClouds: [
-    {
-      title: "Capture",
-      icon: IconCamera,
-      isActive: true,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Proposal",
-      icon: IconFileDescription,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Prompts",
-      icon: IconFileAi,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
     },
   ],
 
   documents: [
     {
-      name: "Role Management",
+      title: "Role Management",
       url: "/role-page",
       icon: IconDatabase,
     },
     {
-      name: "User Management",
+      title: "User Management",
       url: "/user-page",
       icon: IconReport,
     },
@@ -165,11 +108,11 @@ const DashboardLayout = () => {
           <SidebarHeader>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <a href="#">
+                <SidebarMenuButton asChild className="flex justify-center">
+                  <a href="/dashboard-page">
                     <IconInnerShadowTop />
-                    <span className="text-base font-semibold">
-                      BNB Inc. BackOffice
+                    <span className="text-2xl font-semibold text-primary">
+                      BNB Inc.
                     </span>
                   </a>
                 </SidebarMenuButton>
@@ -178,7 +121,7 @@ const DashboardLayout = () => {
           </SidebarHeader>
           <SidebarContent>
             <NavMain items={data.navMain} />
-            <NavDocuments items={data.documents} />
+            <NavUserManagement items={data.documents} />
             <NavSecondary items={data.navSecondary} className="mt-auto" />
           </SidebarContent>
         </Sidebar>

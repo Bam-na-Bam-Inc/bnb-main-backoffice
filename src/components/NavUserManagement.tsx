@@ -20,7 +20,7 @@ const NavMain = ({
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
       <SidebarGroupLabel className="font-bold text-lg text-primary">
-        Main
+        User Management
       </SidebarGroupLabel>
 
       <SidebarMenu>
@@ -33,14 +33,14 @@ const NavMain = ({
               >
                 {({ isActive }) => (
                   <div
-                    className={`flex items-center gap-2 rounded-xl w-full p-2
-                  ${isActive ? "bg-primary text-white" : "hover:bg-muted"}`}
+                    className={`flex items-center gap-2 rounded-lg w-full p-2
+                    ${isActive ? "bg-primary text-white" : "hover:bg-muted"}`}
                   >
                     <item.icon
                       className={`h-4 w-4 ${isActive ? "text-white" : "text-black"}`}
                     />
                     <span
-                      className={`text-base ${isActive ? "text-white font-semibold" : "text-black"}`}
+                      className={`text-base ${isActive ? "text-white" : "text-black"}`}
                     >
                       {item.title}
                     </span>
